@@ -21,13 +21,11 @@
             document.querySelector('h1').innerHTML = c;
         }
 
-        document.addEventListener('DOMContentLoaded', function(){
-            document.querySelectorAll('.col').forEach(function(button){
-                button.onclick = function(){
-                    document.querySelector('h1').style.color = button.dataset.color;
-                }
-            })
-        })
+        document.addEventListener('DOMContentLoaded', () =>{
+            document.querySelector('select').onchange = function(){
+                document.querySelector('h1').style.color = this.value;
+            }
+        });
     </script>
 </head>
 <body>
@@ -35,9 +33,11 @@
     <button onclick="decrease()"><</button>
     <button onclick="increase()">></button>
     <button onclick="reset()">Reset</button>
-    <h3>Click the button to change the color of the number</h3>
-    <button data-color="red" class="col">Red</button>
-    <button data-color="green" class="col">Green</button>
-    <button data-color="blue" class="col">Blue</button>
+    <select>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
 </body>
 </html>
