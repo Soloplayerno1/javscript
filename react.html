@@ -13,10 +13,20 @@
 <body>
     <div id="app"></div>
     <script type="text/babel">
+        function Hello(props){
+            return(
+                <div>Hello { props.name }</div>
+            )
+        }
+
         function App(){
             return(
-                <div>Hello, world!</div>
-            );
+              <div>
+                <Hello name="dao"/>
+                <Hello name="quoc"/>
+                <Hello name="trung"/>                
+                </div>
+           );
         }
         ReactDOM.render(<App />, document.querySelector("#app"));
     </script>
