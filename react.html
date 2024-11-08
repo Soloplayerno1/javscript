@@ -13,19 +13,17 @@
 <body>
     <div id="app"></div>
     <script type="text/babel">
-        function Hello(props){
-            return(
-                <div>Hello { props.name }</div>
-            )
-        }
-
+        
         function App(){
+            const [count,setCount] = React.useState(3); 
+            function updateCount(){
+                setCount(count+1)   
+            }
             return(
               <div>
-                <Hello name="dao"/>
-                <Hello name="quoc"/>
-                <Hello name="trung"/>                
-                </div>
+                <h1>{count}</h1>
+                <button onClick={updateCount}>Count</button> 
+            </div>
            );
         }
         ReactDOM.render(<App />, document.querySelector("#app"));
